@@ -2,26 +2,22 @@ const reviews = [
   {
     name: "Marcus T.",
     rating: 5,
-    date: "Verified Purchase",
-    text: "Game changer. I used to wipe my shoes on the back of my calf every possession. Now I spray this before warmups and I'm locked in the whole game. My crossovers feel so much sharper.",
+    text: "Game changer. I used to wipe my shoes every possession. Now I spray before warmups and I'm locked in the whole game. My crossovers feel so much sharper.",
   },
   {
     name: "Jordan M.",
     rating: 5,
-    date: "Verified Purchase",
-    text: "Tried it for the first time at an outdoor court with concrete. Couldn't believe the grip I got. No sticky feeling at all. My ankles feel safer cutting hard now.",
+    text: "Tried it on an outdoor concrete court. Couldn't believe the grip. No sticky feeling at all. My ankles feel safer cutting hard now.",
   },
   {
     name: "DeShawn R.",
     rating: 5,
-    date: "Verified Purchase",
-    text: "The cloth that comes with it is super useful. Sprayed on my Kyries, wiped, and instantly felt the difference on the first cut. Will buy again every month.",
+    text: "Sprayed on my Kyries, wiped, and instantly felt the difference on the first cut. The cloth that comes with it is super useful. Will buy again every month.",
   },
   {
     name: "Leila V.",
     rating: 4,
-    date: "Verified Purchase",
-    text: "Works exactly as advertised. I coach a high school team and got a few bottles for our starting five. The kids love it and parents appreciate the injury prevention angle.",
+    text: "I coach a high school team and got bottles for our starting five. The kids love it and parents appreciate the injury prevention angle.",
   },
 ];
 
@@ -31,7 +27,7 @@ function Stars({ count }: { count: number }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <svg
           key={i}
-          className={`w-4 h-4 ${i < count ? "text-[#F26522]" : "text-gray-600"}`}
+          className={`w-4 h-4 ${i < count ? "text-[#F26522]" : "text-gray-200"}`}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -44,36 +40,46 @@ function Stars({ count }: { count: number }) {
 
 export default function Reviews() {
   return (
-    <section className="section-dark py-20 px-6">
+    <section id="reviews" className="bg-white py-20 px-6">
       <div className="max-w-screen-lg mx-auto">
+
         <div className="text-center mb-14">
-          <p className="text-[#F26522] font-bold text-sm uppercase tracking-widest mb-2">
+          <p className="text-[#5B2D8E] font-bold text-xs uppercase tracking-widest mb-3">
             What players say
           </p>
-          <h2 className="text-3xl sm:text-4xl font-black uppercase">
-            Real results on the court
+          <h2 className="text-3xl sm:text-4xl font-black text-[#111] uppercase">
+            Real results on court
           </h2>
           <div className="flex items-center justify-center gap-2 mt-4">
             <Stars count={5} />
-            <span className="text-white font-bold">4.9</span>
-            <span className="text-gray-500 text-sm">on Amazon</span>
+            <span className="font-black text-[#111]">4.9</span>
+            <span className="text-gray-400 text-sm">on Amazon</span>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-          {reviews.map((review) => (
-            <div key={review.name} className="card-purple rounded-2xl p-6">
-              <Stars count={review.rating} />
-              <p className="text-gray-300 text-sm leading-relaxed mt-3 mb-4 italic">
-                &ldquo;{review.text}&rdquo;
+          {reviews.map((r) => (
+            <div
+              key={r.name}
+              className="bg-[#FAF8F5] border border-gray-100 rounded-2xl p-6"
+            >
+              <Stars count={r.rating} />
+              <p className="text-gray-600 text-sm leading-relaxed mt-3 mb-5">
+                &ldquo;{r.text}&rdquo;
               </p>
-              <div className="flex items-center justify-between">
-                <span className="font-bold text-white text-sm">{review.name}</span>
-                <span className="text-xs text-[#F26522]">{review.date}</span>
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-full bg-[#5B2D8E] flex items-center justify-center">
+                  <span className="text-white text-xs font-bold">{r.name[0]}</span>
+                </div>
+                <div>
+                  <p className="font-bold text-[#111] text-sm">{r.name}</p>
+                  <p className="text-xs text-[#F26522]">Verified Amazon Purchase</p>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

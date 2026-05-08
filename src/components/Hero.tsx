@@ -5,88 +5,78 @@ const AMAZON_URL =
 
 export default function Hero() {
   return (
-    <section className="hero-bg min-h-screen flex items-center relative overflow-hidden">
-      {/* Background glow orbs */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#5B2D8E]/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-[#F26522]/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="bg-[#FAF8F5] overflow-hidden">
+      <div className="max-w-screen-xl mx-auto px-6 py-12 lg:py-0 grid grid-cols-1 lg:grid-cols-2 min-h-[92vh] items-center gap-8">
 
-      <div className="max-w-screen-xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-        {/* Text side */}
-        <div className="order-2 lg:order-1 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 bg-[#5B2D8E]/30 border border-[#7B3FBE]/40 rounded-full px-4 py-1.5 mb-6">
-            <span className="w-2 h-2 bg-[#F26522] rounded-full" />
-            <span className="text-xs font-semibold text-[#FF8C42] uppercase tracking-widest">
-              Court-Tested
+        {/* Copy */}
+        <div className="order-2 lg:order-1 py-12">
+          <div className="inline-flex items-center gap-2 bg-[#5B2D8E]/10 rounded-full px-4 py-1.5 mb-6">
+            <span className="w-1.5 h-1.5 bg-[#5B2D8E] rounded-full" />
+            <span className="text-xs font-semibold text-[#5B2D8E] uppercase tracking-widest">
+              Court-Tested Formula
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-none mb-4 uppercase">
-            No Slip.
-            <br />
-            <span className="gradient-text">Just Grip.</span>
+          <h1 className="text-5xl sm:text-6xl font-black leading-[1.05] text-[#111] mb-5 uppercase">
+            No Slip.<br />
+            <span className="text-[#F26522]">Just Grip.</span>
           </h1>
 
-          <p className="text-lg text-gray-300 mb-3 max-w-md mx-auto lg:mx-0">
-            Instant grip boost for basketball players. Deep cleans soles and
-            maximizes traction for{" "}
-            <strong className="text-white">
-              quick cuts, pivots & explosive step backs.
-            </strong>
+          <p className="text-gray-500 text-lg leading-relaxed mb-8 max-w-md">
+            Deep cleans your soles and maximizes traction instantly.
+            Built for quick cuts, explosive pivots, and step backs.
           </p>
 
-          <ul className="flex flex-wrap gap-3 justify-center lg:justify-start mb-8 text-sm">
-            {[
-              "No Residue",
-              "Deep Sole Cleaning",
-              "Safe for All Shoes",
-              "Injury Prevention",
-            ].map((feat) => (
-              <li
-                key={feat}
-                className="flex items-center gap-1.5 bg-[#5B2D8E]/20 border border-[#7B3FBE]/30 rounded-full px-3 py-1 text-gray-300"
-              >
-                <span className="text-[#F26522]">✓</span> {feat}
-              </li>
-            ))}
-          </ul>
+          {/* Trust row */}
+          <div className="flex items-center gap-3 mb-8">
+            <div className="flex -space-x-1">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="w-5 h-5 text-[#F26522]" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span className="font-bold text-[#111] text-sm">4.9</span>
+            <span className="text-gray-400 text-sm">· 200+ verified reviews on Amazon</span>
+          </div>
 
-          <a
-            href={AMAZON_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-pulse inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#FF8C42] text-white font-black text-lg py-4 px-10 rounded-full transition-colors duration-200 uppercase tracking-wide shadow-lg shadow-[#F26522]/30"
-          >
-            Buy on Amazon
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
-          </a>
-
-          <p className="mt-4 text-xs text-gray-500">
-            4 oz / 120 ml · Ships from Amazon Prime
-          </p>
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 items-start">
+            <a
+              href={AMAZON_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-pulse inline-flex items-center gap-3 bg-[#F26522] hover:bg-[#e05a1a] text-white font-black text-base py-4 px-10 rounded-full transition-colors duration-200 shadow-lg shadow-[#F26522]/20"
+            >
+              Buy on Amazon
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+            <div className="flex flex-col justify-center text-sm text-gray-400 gap-1 pt-1">
+              <span>✓ Prime eligible · Fast shipping</span>
+              <span>✓ No residue · Safe for all shoes</span>
+            </div>
+          </div>
         </div>
 
-        {/* Image side */}
-        <div className="order-1 lg:order-2 flex justify-center">
-          <div className="float-anim relative w-72 h-72 sm:w-96 sm:h-96">
+        {/* Product image */}
+        <div className="order-1 lg:order-2 flex justify-center items-end lg:items-center relative">
+          {/* Purple blob behind bottle */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-[420px] h-[420px] bg-[#5B2D8E]/8 rounded-full blur-3xl" />
+          </div>
+          <div className="relative w-[300px] h-[480px] sm:w-[360px] sm:h-[580px] lg:w-[400px] lg:h-[640px]">
             <Image
-              src="/images/product-hero.png"
-              alt="PYMENS Grip Spray Pro — basketball anti-slip spray"
+              src="/images/bottle-hero.png"
+              alt="PYMENS Grip Spray Pro 4oz bottle"
               fill
-              className="object-contain drop-shadow-2xl"
+              className="object-contain"
               priority
             />
           </div>
         </div>
-      </div>
 
-      {/* Scroll hint */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-gray-500 text-xs animate-bounce">
-        <span>Scroll</span>
-        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
       </div>
     </section>
   );
