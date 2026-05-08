@@ -9,10 +9,10 @@ export default function ProblemSection() {
             The real problem
           </p>
           <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[1] uppercase text-white">
-            Dust kills{" "}
-            <span className="text-gray-600 line-through decoration-[#F26522]">your grip</span>
+            <span className="text-gray-500 line-through decoration-[#F26522] decoration-4">New shoes</span>
+            {" "}won&apos;t fix it.
             <br />
-            <span className="text-[#F26522]">every game.</span>
+            <span className="text-[#F26522]">This will.</span>
           </h2>
         </div>
 
