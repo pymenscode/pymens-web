@@ -1,47 +1,49 @@
 export default function ProblemSection() {
   return (
-    <section className="bg-white py-20 px-6">
-      <div className="max-w-screen-md mx-auto text-center">
-        <p className="text-[#5B2D8E] font-bold text-xs uppercase tracking-widest mb-3">
-          The problem
-        </p>
-        <h2 className="text-3xl sm:text-4xl font-black text-[#111] uppercase mb-5">
-          Slipping costs you the play
-        </h2>
-        <p className="text-gray-500 text-lg leading-relaxed mb-12 max-w-lg mx-auto">
-          Dusty gym floors kill your sole grip mid-game. One missed cut,
-          one lost pivot — and your defender blows past you.
-          Regular shoe-wiping doesn&apos;t clean the grooves. You need more.
-        </p>
+    <section className="bg-[#111] py-24 px-6">
+      <div className="max-w-screen-lg mx-auto">
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+        {/* Big provocative statement */}
+        <div className="mb-16">
+          <p className="text-[#F26522] font-black text-xs uppercase tracking-[0.3em] mb-5">
+            The real problem
+          </p>
+          <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[1] uppercase text-white">
+            Your shoes{" "}
+            <span className="text-gray-600 line-through decoration-[#F26522]">have grip.</span>
+            <br />
+            Your soles{" "}
+            <span className="text-[#F26522]">don&apos;t.</span>
+          </h2>
+        </div>
+
+        {/* Stat-style grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-white/10">
           {[
             {
-              icon: "💨",
-              title: "Dusty Courts",
-              desc: "Gym dust packs into sole grooves, reducing traction close to zero.",
+              stat: "1 slip",
+              label: "is all it takes",
+              desc: "One missed cut or blown pivot can change the momentum of the entire game.",
             },
             {
-              icon: "⚡",
-              title: "Lost First Step",
-              desc: "Without grip you hesitate. That split-second kills your explosiveness.",
+              stat: "30 sec",
+              label: "to fix it",
+              desc: "Spray, wipe, done. No waiting, no fuss. Back on the court before tip-off.",
             },
             {
-              icon: "🦵",
-              title: "Injury Risk",
-              desc: "Slipping increases ankle rolls and knee stress on every lateral cut.",
+              stat: "0%",
+              label: "residue",
+              desc: "Leaves nothing behind on your soles or on the floor. Clean grip every time.",
             },
-          ].map(({ icon, title, desc }) => (
-            <div
-              key={title}
-              className="bg-[#FAF8F5] rounded-2xl p-6 border border-gray-100"
-            >
-              <div className="text-3xl mb-4">{icon}</div>
-              <h3 className="font-bold text-[#111] mb-2">{title}</h3>
+          ].map(({ stat, label, desc }) => (
+            <div key={stat} className="bg-[#111] p-8">
+              <div className="text-[#F26522] font-black text-5xl mb-1">{stat}</div>
+              <div className="text-white font-bold uppercase text-sm tracking-wide mb-4">{label}</div>
               <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -5,18 +5,20 @@ const AMAZON_URL =
 
 export default function SportsSection() {
   return (
-    <section className="bg-[#FAF8F5] py-20 px-6">
-      <div className="max-w-screen-lg mx-auto">
-        <div className="text-center mb-10">
-          <p className="text-[#5B2D8E] font-bold text-xs uppercase tracking-widest mb-3">
+    <section className="bg-[#0f0f0f] py-24 px-6">
+      <div className="max-w-screen-xl mx-auto">
+
+        <div className="mb-10">
+          <p className="text-[#F26522] font-black text-xs uppercase tracking-[0.3em] mb-5">
             Not just basketball
           </p>
-          <h2 className="text-3xl sm:text-4xl font-black text-[#111] uppercase">
-            Works on any sport
+          <h2 className="text-5xl sm:text-6xl font-black uppercase leading-[1]">
+            Any sport.<br />
+            <span className="text-[#F26522]">Any court.</span>
           </h2>
         </div>
 
-        <div className="relative w-full rounded-3xl overflow-hidden mb-10">
+        <div className="relative w-full rounded-2xl overflow-hidden mb-10">
           <Image
             src="/images/sports.png"
             alt="Grip Spray Pro — Soccer, Tennis, Golf, Basketball, Baseball, Volleyball, Football"
@@ -26,16 +28,17 @@ export default function SportsSection() {
           />
         </div>
 
-        <div className="text-center">
+        <div className="flex justify-end">
           <a
             href={AMAZON_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#F26522] hover:bg-[#e05a1a] text-white font-black py-4 px-10 rounded-full transition-colors duration-200"
+            className="inline-flex items-center gap-2 border border-white/20 hover:border-[#F26522] hover:text-[#F26522] text-white font-bold py-3 px-8 rounded-full transition-colors text-sm"
           >
             Order on Amazon →
           </a>
         </div>
+
       </div>
     </section>
   );
