@@ -9,11 +9,10 @@ export default function ProblemSection() {
             The real problem
           </p>
           <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] font-black leading-[1] uppercase text-white">
-            Your shoes{" "}
-            <span className="text-gray-600 line-through decoration-[#F26522]">have grip.</span>
+            Dust kills{" "}
+            <span className="text-gray-600 line-through decoration-[#F26522]">your grip</span>
             <br />
-            Your soles{" "}
-            <span className="text-[#F26522]">don&apos;t.</span>
+            <span className="text-[#F26522]">every game.</span>
           </h2>
         </div>
 
